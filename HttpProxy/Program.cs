@@ -57,8 +57,9 @@ namespace HttpProxy
                 }
                 catch (Exception ex)
                 {
-                    c.Error($"创建配置文件时发生错误: {ex.Message}");
-                    MessageBox(IntPtr.Zero, "创建配置文件时发生错误:\n" + ex.Message, "错误：", 0x00000010);
+                    c.Error($"创建配置文件时发生错误：{ex}");
+                    MessageBox(IntPtr.Zero, "创建配置文件时发生错误：\n" + ex.Message, "错误：", 0x00000010);
+                    Environment.Exit(1);
                 }
             }
 

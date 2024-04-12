@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HttpProxy_GUI.Properties
+namespace HttpProxy.GUI.Properties
 {
 
 

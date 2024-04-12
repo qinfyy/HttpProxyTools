@@ -30,7 +30,9 @@ namespace HttpProxy.GUI
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"创建配置文件时发生错误: {ex.Message}");
+                    log.Error("创建配置文件时发生错误：" + ex);
+                    MessageBox.Show("创建配置文件时发生错误:\n" + ex.Message, "错误：", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Application.Exit();
                 }
             }
 
@@ -66,7 +68,8 @@ namespace HttpProxy.GUI
                 配置.写入值("服务器地址", 服务器地址);
             } catch (Exception ex)
             {
-                MessageBox.Show($"写入配置文件时发生错误: {ex.Message}", "错误：", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                log.Error("写入配置文件时发生错误：" + ex);
+                MessageBox.Show($"写入配置文件时发生错误：\n{ex.Message}" , "错误：", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
